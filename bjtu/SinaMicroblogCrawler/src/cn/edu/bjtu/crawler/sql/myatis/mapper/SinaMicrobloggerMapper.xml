@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjtu.crawler.sql.myatis.mapper.SinaMicrobloggerMapper">
+	<cache />
+	<select id="getConfigInfo" resultType="cn.edu.bjtu.crawler.sql.myatis.domain.CrawlerConfig">
+		SELECT
+			id,deep,page
+		FROM crawler_config 
+	</select>
+	<update id="updatePage" parameterType="long">
+		UPDATE crawler_config SET
+		page=#{page}
+	</update>
+	<update id="updateDeep" parameterType="int">
+		UPDATE crawler_config SET
+		deep=#{deep}
+	</update>
+	<select id="selectBloggerNoComplete" resultType="cn.edu.bjtu.crawler.sql.myatis.domain.SinaMicroblogger">
+		SELECT
+		  SINA_ID as sinaId,
+	      MBLOG_URL as mblogUrl,
+	      DEEP as deep
+	    FROM sina_microblogger
+	    WHERE COMPLETE_FLAG=#{1}
+	    and DEEP=#{0} limit 0,10
+	</select>
+	<select id="selectBloggerForCollect" resultType="cn.edu.bjtu.crawler.sql.myatis.domain.SinaMicroblogger">
+		SELECT
+		   SINA_ID as sinaId,
+	      MBLOG_URL as mblogUrl,
+	      DEEP as deep,
+	      COMPLETE_FLAG as completeFlag
+	    FROM sina_microblogger
+	    WHERE DEEP=#{0} order by LOCAL_ID asc limit #{1},#{2}
+	</select>
+	<insert id="insertBloggerUrl">
+		INSERT INTO sina_microblogger (MBLOG_URL,COMPLETE_FLAG,DEEP) VALUES (#{0},#{2},#{1})
+	</insert>
+	<insert id="insertBloggerUrlAndSinaId">
+		INSERT INTO sina_microblogger (MBLOG_URL,COMPLETE_FLAG,DEEP,SINA_ID) VALUES (#{0},#{2},#{1},#{3})
+	</insert>
+	<update id="updateBloggerToComplete">
+		UPDATE sina_microblogger SET
+		COMPLETE_FLAG = #{1}
+		WHERE MBLOG_URL = #{0}
+	</update>
+	<update id="updateBloggerInfo" parameterType="cn.edu.bjtu.crawler.sql.myatis.domain.SinaMicroblogger">
+	    UPDATE sina_microblogger SET
+	      SINA_ID = #{sinaId},
+	      MBLOG_NICKNAME = #{mblogNickname},
+	      ADDRESS = #{address},
+	      GENDER = #{gender},
+	      BIRTHDAY = #{birthDay},
+	      REMARK = #{remark},
+	      CORPORATION = #{corporation},
+	      STARSIGN = #{startSign},
+	      MBLOGNUMBER = #{mblogNum},
+	      FANSNUMBER = #{fansNum},
+	      ATTENTIONS = #{attentions},
+	      COLLEGE = #{college},
+	      DOMAIN = #{domain},
+	      SINAAPPROVE = #{sinaProve},
+	      MBLOG_TAGS = #{mBlogTags}
+	    WHERE MBLOG_URL = #{mblogUrl}
+  </update>
+</mapper>

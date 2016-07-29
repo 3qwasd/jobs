@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjtu.crawler.sql.myatis.mapper.SinaMicroblogerRelationMapper">
+	<cache />
+	<insert id="saveBloggerFansRelation" parameterType="cn.edu.bjtu.crawler.sql.myatis.domain.SinaMicrobloggerRelation">
+    INSERT INTO sina_microblogger_relation
+      (BLOGGER_SINA_ID,FANS_SINA_ID)
+    VALUES
+      (#{bloggerSinaId}, #{fansSinaId})
+  	</insert>
+</mapper>

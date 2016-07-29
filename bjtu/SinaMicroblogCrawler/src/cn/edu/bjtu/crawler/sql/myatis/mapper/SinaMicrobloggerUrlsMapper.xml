@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjtu.crawler.sql.myatis.mapper.SinaMicrobloggerUrlsMapper">
+	<cache />
+	
+	<insert id="saveSinaMicroblogerUrls" parameterType="cn.edu.bjtu.crawler.sql.myatis.domain.SinaMicrobloggerUrls">
+	    INSERT INTO sina_microblogger_urls
+	      (SINA_ID, 
+	      fans_Url, 
+	      follow_Url, 
+	      weibo_Url, 
+	      music_Url, 
+	      book_Url, 
+	      movie_Url, 
+	      talk_Url, 
+	      info_Url, 
+	      place_Url, 
+	      price_Url, 
+	      photo_Url,
+	      hisBook_Url)
+	    VALUES
+	      (#{sinaId}, 
+	      #{fansUrl}, 
+	      #{followUrl}, 
+	      #{weiboUrl}, 
+	      #{musicUrl}, 
+	      #{bookUrl}, 
+	      #{movieUrl}, 
+	      #{talkUrl}, 
+	      #{infoUrl}, 
+	      #{placeUrl}, 
+	      #{priceUrl}, 
+	      #{photoUrl},
+	      #{hisBookUrl})
+  	</insert>
+</mapper>
