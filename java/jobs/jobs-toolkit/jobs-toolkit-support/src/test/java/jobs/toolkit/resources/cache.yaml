@@ -1,0 +1,8 @@
+#cache service
+cache.provider: jobs.toolkit.cache.support.GuavaCacheProvider
+caches:
+  - uniqueName: resource
+    cacheLoader: jobs.toolkit.cache.support.SimpleCacheLoader
+  - uniqueName: doubleCache
+    cacheLoader: jobs.toolkit.cache.support.DoubleCacheLoader       
+    

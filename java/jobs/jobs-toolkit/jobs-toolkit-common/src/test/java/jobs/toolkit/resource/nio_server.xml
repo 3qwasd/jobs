@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NioEngine engineThreadNum="10">
+	<NioManager class="jobs.tools.nio.NormalNioManager" name="TestNioManager">
+		<NioConnector class="jobs.tools.nio.NioServer" name="TestNioServer" serverPort="8888">
+		</NioConnector>
+		<NioCoder class="jobs.tools.nio.TestNioCoder">
+			<NioCoderAdapter class="jobs.tools.nio.TestNioCoderAdapter"></NioCoderAdapter>
+		</NioCoder>
+	</NioManager>
+</NioEngine>

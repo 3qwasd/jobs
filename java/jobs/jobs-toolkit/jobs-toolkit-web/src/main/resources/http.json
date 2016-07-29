@@ -1,0 +1,19 @@
+{
+   "port": 6080,
+   "servlet_context_params":{
+		"contextConfigLocation": "classpath:applicationContext.xml"
+	},
+   "servlet": [
+      {"class_name": "org.glassfish.jersey.servlet.ServletContainer", "path_spec": "/app/*", "params":{}},
+   ],
+   "filter": [
+      {"class_name": "org.glassfish.jersey.servlet.ServletContainer", "params":{}},
+   ],
+   "listener":[
+      {"class_name": "org.glassfish.jersey.servlet.ServletContainer", "params":{}},
+   ],
+   "event_listener":[
+      {"class_name": "org.glassfish.jersey.servlet.ServletContainer", "params":{}},
+   ],
+   "static_resource_path": "MediaMatchView"
+}

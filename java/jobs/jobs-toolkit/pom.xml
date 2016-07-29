@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>jobs</groupId>
+    <artifactId>jobs</artifactId>
+    <version>1.0</version>
+  </parent>
+  <groupId>jobs.toolkit</groupId>
+  <artifactId>jobs-toolkit</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>jobs-toolkit</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <modules>
+  	<module>jobs-toolkit-common</module>
+  	<module>jobs-toolkit-distributed</module>
+  	<module>jobs-toolkit-job</module>
+  	<module>jobs-toolkit-web</module>
+    <module>jobs-toolkit-support</module>
+    <module>jobs-toolkit-zookeeper</module>
+    <module>jobs-toolkit-spark</module>
+  </modules>
+</project>

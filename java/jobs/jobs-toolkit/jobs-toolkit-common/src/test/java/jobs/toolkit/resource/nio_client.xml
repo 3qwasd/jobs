@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NioEngine engineThreadNum="10">
+	<NioManager class="jobs.tools.nio.NormalNioManager" name="TestClientManager">
+		<NioConnector class="jobs.tools.nio.NioClient" name="TestNioClient" remoteIp="127.0.0.1" remotePort="8888">
+		</NioConnector>
+	</NioManager>
+</NioEngine>

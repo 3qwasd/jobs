@@ -1,0 +1,32 @@
+<MapBeans package="com.sugon.bd.media.app.entity">
+	<MapBean name="MapBean" isRoot="True" classType="abstract">	
+	</MapBean>
+	<MapBean name="Params" classType="final" extend="MapBean" valueType="Object">
+	</MapBean>
+	<MapBean name="ViewElement" extend="MapBean" classType="abstract" valueType="Object">
+		<property name="id" type="String" />
+		<property name="key" type="String" />
+		<property name="name" type="String" />
+		<property name="text" type="String" />
+		<property name="description" type="String" />
+		<property name="type" type="Integer" />
+		<property name="template" type="String" />
+		<property name="script" type="String" />
+		<property name="params" type="Params" />
+	</MapBean>
+	<MapBean name="TreeElement" extend="ViewElement" isTree="True" elementType="attribute">
+		<property name="deep" type="Integer"/>
+		<property name="path" type="String"/>
+	</MapBean>
+	<MapBean name="Board" extend="TreeElement" classType="final">
+		<property name="panels" type="List" valueType="Params"/>
+		<property name="searchparam" type="Params"/>
+		<property name="charttype" type="String"/>
+		<property name="indices" type="List" valueType="Params"/>
+	</MapBean>
+	<MapBean name="Panel" extend="ViewElement" classType="final">
+		<property name="components" type="List" valueType="Params"/>
+	</MapBean>
+	<MapBean name="Widget" extend="ViewElement" classType="final">
+	</MapBean>
+</MapBeans>

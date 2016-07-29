@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>jobs.toolkit</groupId>
+		<artifactId>jobs-toolkit</artifactId>
+		<version>1.0</version>
+	</parent>
+	<groupId>jobs.toolkit</groupId>
+	<artifactId>jobs-toolkit-zookeeper</artifactId>
+	<version>1.0</version>
+	<name>jobs-toolkit-zookeeper</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<zookeeper.version>3.5.1-alpha</zookeeper.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>jobs.toolkit</groupId>
+			<artifactId>jobs-toolkit-common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
+		</dependency>
+	</dependencies>
+</project>
