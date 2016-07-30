@@ -12,6 +12,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -34,6 +35,7 @@ public class Nio2Test {
 	
 	@Test
 	public void FilesTest(){
+		List<?> list = new ArrayList<>();
 		Assert.assertTrue(Files.exists(path, new LinkOption[]{LinkOption.NOFOLLOW_LINKS}));
 		Assert.assertFalse(Files.exists(path1));
 		Assert.assertTrue(Files.notExists(path1));
