@@ -25,6 +25,7 @@ public class AcceptEventHandler extends BaseEventHandler<SelectedEvent> {
 			SelectionKey key = event.getSelectionKey();
 			server = (NioServer) key.attachment();
 			ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
+		
 			sc = ssc.accept();
 			Socket so = sc.socket();			
 			so.setSendBufferSize(server.getSendBufferSize());

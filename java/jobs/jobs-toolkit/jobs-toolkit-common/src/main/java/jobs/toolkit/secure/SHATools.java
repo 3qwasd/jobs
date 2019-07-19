@@ -1,10 +1,11 @@
 package jobs.toolkit.secure;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import jobs.toolkit.utils.StringUtils;
 
 /**
  * 
@@ -41,6 +42,8 @@ public class SHATools {
 			in = new DigestInputStream(in, sha);
 			while(in.read() != -1);
 			byte[] digest = sha.digest();
+			
+			
 			
 			return DatatypeConverter.printHexBinary(digest);
 		} catch (NoSuchAlgorithmException e) {
