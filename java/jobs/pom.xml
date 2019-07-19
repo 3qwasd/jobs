@@ -38,7 +38,5 @@
 	</dependencies>
 	<modules>
 		<module>jobs-toolkit</module>
-		<module>jobs-kdd</module>
-    <module>jobs-weibo</module>
   </modules>
 </project>

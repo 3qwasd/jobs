@@ -2,28 +2,42 @@
 #include <windows.h>
 #include <conio.h>
 #include <time.h>
+
 void BlockGame::init(){
+
 	mainLayer = new Layer(MAIN_WIDTH,MAIN_HEIGHT,SIGN_BACKGROUND);
+
 	gameui = new BlockGameUi(0,0,mainLayer);
 
 	blockLayer = new BlockAreaLayer(BLOCK_AREA_WIDTH,BLOCK_AREA_HEIGHT,SIGN_BLANK);
+
 	GameWidget *blockArea = new GameWidget(2,2,blockLayer,1);
 
+
+
 	nextBlockLayer = new Layer(NEXT_BLOCK_WIDTH,NEXT_BLOCK_HEIGHT,SIGN_BLANK);
+
 	GameWidget *nextBlockArea = new GameWidget(23,2,nextBlockLayer,1);
 
 	scoreLayer = new Layer(SCORE_PANEL_WIDTH,SCORE_PANEL_HEIGHT,SIGN_BLANK);
+
 	GameWidget *scorePanel = new GameWidget(23,15,scoreLayer,1);
 
 	gameui->addWidget(blockArea);
+
 	gameui->addWidget(nextBlockArea);
+
 	gameui->addWidget(scorePanel);
 }
 
 void BlockGame::mainLoop(){
+
 	this->currBlock = NULL;
+
 	size_t start_x = BLOCK_AREA_WIDTH / 2 - 2;
+
 	size_t start_y = 0;
+
 	bool isSurvive;
 	char key;
 	size_t speed = 2;

@@ -15,6 +15,7 @@ void Block::init(){
 	this->type = bigType*10+this->currShape;
 	this->shapes[this->currShape-1] = getBlockResByType(this->type,this->height,this->width);
 }
+
 void Block::release(){
 	if(this->shapes != NULL)
 		for(size_t i = 0 ; i != 4 ; i++){
@@ -33,9 +34,11 @@ void Block::release(){
 	
 	delete [] this->shapes;
 }
+
 int** Block::getCurrShape(){
 	return this->shapes[this->currShape-1];
 }
+
 int** Block::rotate(const short &direction){
 	//旋转是按照方块中心点旋转
 	//计算未旋转前方块中心坐标

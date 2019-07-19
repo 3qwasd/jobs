@@ -3,13 +3,13 @@ package jobs.toolkit.config;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MapConfiguration extends AbstractConfiguration{
 
-
-	Map<String, Object> map;
+	Map<String, Object> map = new HashMap<String, Object>();
 	@Override
 	public Object getAttribute(String key) {
 		// TODO Auto-generated method stub

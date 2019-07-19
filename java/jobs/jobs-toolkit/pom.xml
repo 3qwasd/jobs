@@ -18,10 +18,8 @@
   <modules>
   	<module>jobs-toolkit-common</module>
   	<module>jobs-toolkit-distributed</module>
-  	<module>jobs-toolkit-job</module>
   	<module>jobs-toolkit-web</module>
     <module>jobs-toolkit-support</module>
     <module>jobs-toolkit-zookeeper</module>
-    <module>jobs-toolkit-spark</module>
   </modules>
 </project>
