@@ -1,0 +1,10 @@
+http_service:
+	class: jobs.toolkit.http.JettyHttpService
+jetty_http_service:
+	port: 8080
+	context_params:
+		contextConfigLocation: classpath:applicationContext.xml
+	servlet:
+		- servlet-class: org.glassfish.jersey.servlet.ServletContainer
+		  url-pattern: /rest/*
+		  init-param

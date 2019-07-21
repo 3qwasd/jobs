@@ -2,7 +2,7 @@ package gateway;
 
 import org.junit.Test;
 
-import gateway.component.NettyHttpServer;
+import gateway.component.server.NettyHttpServer;
 import jobs.toolkit.config.MapConfiguration;
 
 public class NettyHttpServerTest {

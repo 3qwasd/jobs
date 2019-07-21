@@ -1,29 +1,20 @@
 package gateway.component;
 
-import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.DefaultFullHttpResponse;
-import io.netty.handler.codec.http.HttpObject;
-import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.handler.codec.http.HttpVersion;
-import io.netty.util.CharsetUtil;
+import gateway.message.HttpRequestEvent;
+import jobs.toolkit.event.EventHandler;
 
-public class HttpRequestHandler extends SimpleChannelInboundHandler<HttpObject>{
+public class HttpRequestHandler implements EventHandler<HttpRequestEvent>{
 
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+	public void doHandle(HttpRequestEvent event) throws Throwable {
+		// TODO Auto-generated method stub
 		
-		//FullHttpRequest httpRequest = (FullHttpRequest) msg;
+	}
+
+	@Override
+	public void doExcepion(HttpRequestEvent event, Throwable e) {
+		// TODO Auto-generated method stub
 		
-		var response = new DefaultFullHttpResponse(
-				HttpVersion.HTTP_1_1, HttpResponseStatus.OK, Unpooled.wrappedBuffer("Hello World!".getBytes(CharsetUtil.UTF_8)));
-		
-		response.headers().set("Content-Type", "text/plain");
-		response.headers().setInt("Content-Length", response.content().readableBytes());
-		response.headers().set("Connection", "keep-alive");
-		
-		ctx.writeAndFlush(response);
 	}
 
 }

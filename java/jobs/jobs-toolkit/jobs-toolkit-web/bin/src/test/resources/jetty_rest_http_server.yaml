@@ -1,0 +1,9 @@
+http_server_class  : jobs.toolkit.http.JettyRestFullHttpServer
+http_server_port   : 8080
+use_spring         : true
+use_jmx            : true
+restfull_packages  : jobs.toolkit.http
+rest_path          : /rest/*
+ws_path            : /websocket
+ws_session_idletime: 30
+static_res_path    : D:/opensource/lucene-6.0.1/lucene-6.0.1/docs

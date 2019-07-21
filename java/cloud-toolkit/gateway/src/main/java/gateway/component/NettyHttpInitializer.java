@@ -1,5 +1,6 @@
 package gateway.component;
 
+import gateway.component.server.HttpRequestHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.http.HttpObjectAggregator;

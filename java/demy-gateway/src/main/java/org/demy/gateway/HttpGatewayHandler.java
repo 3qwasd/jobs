@@ -9,6 +9,8 @@ public class HttpGatewayHandler extends SimpleChannelInboundHandler<HttpObject>{
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
 		
+		System.out.println("kkkkkkkk");
+		
 		System.out.println(msg);
 	}
 	
