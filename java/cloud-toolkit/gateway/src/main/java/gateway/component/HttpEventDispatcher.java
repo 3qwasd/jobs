@@ -22,7 +22,7 @@ public final class HttpEventDispatcher extends BaseDispatcher<HttpMessageEvent>{
 	@Override
 	protected void initialize() throws Exception {
 		super.initialize();
-		this.register(EventType.of(HttpRequestEvent.class.getName()), eventHandler);
-		this.register(EventType.of(HttpResponseEvent.class.getName()), eventHandler);
+		this.register(EventType.of(HttpRequestEvent.class.getName()), new HttpRequestHandler());
+		this.register(EventType.of(HttpResponseEvent.class.getName()), new HttpResponseHandler());
 	}
 }

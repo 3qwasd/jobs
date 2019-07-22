@@ -8,8 +8,4 @@ public abstract class HttpMessageEvent extends BaseEvent{
 	public HttpMessageEvent(EventType eventType) {
 		super(eventType);
 	}
-	
-	public abstract String getContextPath();
-	
-	public abstract String getServiceVersion();
 }

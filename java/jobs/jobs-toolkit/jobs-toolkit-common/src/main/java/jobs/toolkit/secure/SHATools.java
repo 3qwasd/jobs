@@ -5,6 +5,8 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.xml.bind.DatatypeConverter;
+
 import jobs.toolkit.utils.StringUtils;
 
 /**

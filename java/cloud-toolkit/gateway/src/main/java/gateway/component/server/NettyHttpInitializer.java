@@ -1,6 +1,5 @@
-package gateway.component;
+package gateway.component.server;
 
-import gateway.component.server.HttpRequestHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.http.HttpObjectAggregator;
@@ -16,6 +15,6 @@ public class NettyHttpInitializer extends ChannelInitializer<Channel>{
 		pipeline.addLast("serverCodec", new HttpServerCodec());
 		pipeline.addLast("aggregator", new HttpObjectAggregator(1024 * 1024));
 		pipeline.addLast("respondExpectContinue",new HttpServerExpectContinueHandler());
-		pipeline.addLast("requestHandler", new HttpRequestHandler());
+		pipeline.addLast("requestHandler", new NettyHttpRequestHandler());
 	}
 }
